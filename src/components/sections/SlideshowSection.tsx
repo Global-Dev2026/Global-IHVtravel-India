@@ -40,7 +40,7 @@ export default function SlideshowSection() {
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 40,
+            duration: 300,
           }}
         >
           {/* Double the images to create a seamless loop */}

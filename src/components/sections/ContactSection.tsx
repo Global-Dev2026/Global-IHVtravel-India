@@ -49,24 +49,28 @@ const contactInfo = [
     label: "Call Us",
     value: "+94 XX XXX XXXX",
     sub: "Mon–Sat, 9am–6pm IST",
+    link: "tel:+94XXXXXXXXX",
   },
   {
     icon: Mail,
     label: "Email Us",
     value: "reservations.india@ihvtravel.com",
     sub: "Reply within 24 hours",
+    link: "mailto:reservations.india@ihvtravel.com",
   },
   {
     icon: MapPin,
     label: "Operations",
     value: "Sri Lanka & India",
     sub: "Colombo Headquarters",
+    link: undefined,
   },
   {
     icon: Clock,
     label: "Response Time",
     value: "Within 24 Hours",
     sub: "Guaranteed response",
+    link: undefined,
   },
 ];
 
@@ -165,9 +169,15 @@ export default function ContactSection() {
                   <p className="text-cream/50 text-xs uppercase tracking-widest">
                     {c.label}
                   </p>
-                  <p className="text-cream text-sm font-medium mt-0.5">
-                    {c.value}
-                  </p>
+                  {c.link ? (
+                    <a href={c.link} className="text-cream text-sm font-medium mt-0.5 hover:text-gold transition-colors block">
+                      {c.value}
+                    </a>
+                  ) : (
+                    <p className="text-cream text-sm font-medium mt-0.5">
+                      {c.value}
+                    </p>
+                  )}
                   <p className="text-cream/40 text-xs mt-0.5">{c.sub}</p>
                 </div>
               </div>

@@ -140,10 +140,10 @@ export default function Footer() {
               <li className="flex gap-3 text-sm text-cream/60">
                 <Mail size={15} className="text-gold shrink-0 mt-0.5" />
                 <a
-                  href="mailto:india@ihvtravel.com"
+                  href="mailto:reservations.india@ihvtravel.com"
                   className="hover:text-gold transition-colors"
                 >
-                  india@ihvtravel.com
+                  reservations.india@ihvtravel.com
                 </a>
               </li>
               <li className="flex gap-3 text-sm text-cream/60">

@@ -14,6 +14,7 @@ export interface TourPackage {
   badge?: string;
 }
 
+// Trigger deploymentg
 export type PackageCategory =
   | "discovery"
   | "luxury"

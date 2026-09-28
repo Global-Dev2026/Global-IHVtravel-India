@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+//gallery images
 const galleryImages = [
   {
     src: "/images/image-1.jpg",

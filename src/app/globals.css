@@ -2,23 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-  --font-inter: 'Inter', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-
-  body {
-    @apply bg-charcoal text-cream font-sans antialiased;
+  
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-scroll-container] {
+    will-change: transform;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
   }
 
-  h1, h2, h3, h4 {
+  body {
+    @apply bg-background text-ivory antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
 }
@@ -29,14 +42,14 @@
   }
 
   .gold-gradient-text {
-    background: linear-gradient(135deg, #C9A84C 0%, #E2C97E 50%, #A07830 100%);
+    background: linear-gradient(135deg, #B8860B 0%, #F5D77A 50%, #D4AF37 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+    @apply px-4 sm:px-6 lg:px-8 py-20 lg:py-32;
   }
 
   .container-max {
@@ -44,30 +57,38 @@
   }
 
   .btn-gold {
-    @apply bg-gold text-charcoal font-semibold px-8 py-3 rounded-none 
-           hover:bg-gold-light transition-all duration-300 
-           shadow-gold hover:shadow-gold-lg tracking-wide uppercase text-sm;
+    @apply relative bg-gold text-background font-semibold px-8 py-3 rounded-none
+           hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500
+           tracking-widest uppercase text-[11px] md:text-xs overflow-hidden z-10;
+  }
+  .btn-gold::before {
+    content: '';
+    @apply absolute inset-0 bg-gold-gradient opacity-0 transition-opacity duration-500 -z-10;
+  }
+  .btn-gold:hover::before {
+    @apply opacity-100;
   }
 
   .btn-outline-gold {
-    @apply border border-gold text-gold font-semibold px-8 py-3 rounded-none 
-           hover:bg-gold hover:text-charcoal transition-all duration-300 
-           tracking-wide uppercase text-sm;
+    @apply border border-gold text-gold font-semibold px-8 py-3 rounded-none
+           hover:bg-gold hover:text-background hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] 
+           transition-all duration-300 tracking-widest uppercase text-[11px] md:text-xs backdrop-blur-sm;
   }
 
   .card-luxury {
-    @apply bg-charcoal-light border border-gold/20 hover:border-gold/50 
-           transition-all duration-500 overflow-hidden;
+    @apply bg-surface/50 backdrop-blur-lg border border-gold/30 hover:border-gold/80 
+           hover:shadow-[0_8px_40px_rgba(0,0,0,0.6)] hover:-translate-y-2
+           transition-all duration-700 overflow-hidden;
   }
 
   .divider-gold {
-    @apply w-16 h-px bg-gold mx-auto my-4;
+    @apply w-12 h-px bg-gold-gradient mx-auto my-6;
   }
 
   .input-luxury {
-    @apply bg-charcoal-dark border border-gold/30 text-cream placeholder-cream/40 
-           focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold 
-           px-4 py-3 w-full transition-colors duration-200;
+    @apply bg-surface/40 backdrop-blur-md border border-gold/40 text-ivory placeholder-muted 
+           focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold focus:shadow-[0_0_15px_rgba(212,175,55,0.2)]
+           px-4 py-3 w-full transition-all duration-300 rounded-none;
   }
 }
 
@@ -76,22 +97,42 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F0F1A;
+  background: #0A0A0A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9A84C;
-  border-radius: 3px;
+  background: #D4AF37;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E2C97E;
+  background: #F5D77A;
 }
 
 /* Video overlay */
 .video-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(15, 15, 26, 0.3) 0%,
-    rgba(15, 15, 26, 0.5) 50%,
-    rgba(15, 15, 26, 0.85) 100%
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.6) 50%,
+    rgba(10, 10, 10, 0.95) 100%
   );
 }
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #D4AF37;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.active {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(2px);
+}
+

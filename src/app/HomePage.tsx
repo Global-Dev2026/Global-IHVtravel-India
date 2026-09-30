@@ -31,34 +31,34 @@ function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
       >
-        <source src="/video/background-video.mp4" type="video/mp4" />
+        <source src="/video/background-video-remake.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/90 via-background/40 to-background/95" />
 
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto pt-20">
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 1 }}
           className="text-gold tracking-[0.4em] uppercase text-xl md:text-3xl font-semibold mb-6"
         >
           Timeless Splendor
         </motion.p>
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 1 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif text-ivory mb-6 leading-tight"
         >
-          Crafted journeys for <br/><span className="gold-gradient-text italic">modern explorers</span>
+          Crafted journeys for <br /><span className="gold-gradient-text italic">modern explorers</span>
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 1 }}
           className="text-muted max-w-2xl text-sm md:text-base font-light leading-relaxed mb-10"
         >
-          Discover unforgettable journeys where nature, culture, and adventure come together in perfect harmony. Turn every trip into a timeless story worth remembering. <br className="hidden md:block"/><span className="text-ivory mt-2 inline-block">India to Sri Lanka, effortlessly.</span>
+          Discover unforgettable journeys where nature, culture, and adventure come together in perfect harmony. Turn every trip into a timeless story worth remembering. <br className="hidden md:block" /><span className="text-ivory mt-2 inline-block">India to Sri Lanka, effortlessly.</span>
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 1 }}
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"
         >
@@ -70,9 +70,9 @@ function Hero() {
           </button>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-10 right-10 z-20 hidden md:flex flex-col items-center gap-2"
       >
@@ -100,11 +100,11 @@ function Navbar() {
   }, []);
 
   const mainLinks = [
-    "Home", 
-    "Lifestyle Experiences", 
-    "About", 
-    "Services", 
-    "Our Signature Journey", 
+    "Home",
+    "Lifestyle Experiences",
+    "About",
+    "Services",
+    "Our Signature Journey",
     "Partnerships"
   ];
 
@@ -135,7 +135,7 @@ function Navbar() {
         {/* Main Navbar */}
         <div className={`w-full transition-all duration-500 ${scrolled ? "bg-surface/90 backdrop-blur-xl border-b border-gold/10 shadow-luxury py-3" : "bg-gradient-to-b from-background/80 to-transparent py-5"}`}>
           <div className="container-max px-6 lg:px-8 flex justify-between items-center">
-            
+
             {/* Logo */}
             <Link href="/" className="flex items-center gap-4 relative z-50 group">
               <div className="w-12 h-12 md:w-16 md:h-16 relative transition-transform duration-500 group-hover:scale-105">
@@ -175,16 +175,16 @@ function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }} 
-            animate={{ opacity: 1, backdropFilter: "blur(20px)" }} 
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }} 
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-40 bg-background/95 flex flex-col justify-center items-center"
           >
             <nav className="flex flex-col items-center gap-8 w-full px-6">
               {mainLinks.map((link, i) => (
-                <motion.div 
+                <motion.div
                   key={link}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }}
                 className="mt-8 flex flex-col items-center gap-6 w-full max-w-xs"
               >
@@ -225,7 +225,7 @@ function Navbar() {
 
 function ValueDifference() {
   const containerRef = useRef(null);
-  
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".val-card", {
@@ -299,14 +299,14 @@ function SignatureJourneys() {
           <h2 className="text-4xl md:text-5xl font-serif text-ivory mb-6">Our Signature Journeys</h2>
           <p className="text-muted text-lg">Every traveler is unique. Discover our expertly crafted itineraries designed to inspire, connect, and create lasting memories.</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PACKAGES.map((pkg, i) => (
             <div key={i} className="card-luxury p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-500 cursor-pointer">
               <div className="text-gold text-xs tracking-widest uppercase mb-4 font-semibold">{pkg.duration}</div>
               <h3 className="text-2xl font-serif text-ivory mb-4 group-hover:text-gold transition-colors">{pkg.title}</h3>
               <p className="text-muted text-sm leading-relaxed mb-6 flex-grow">{pkg.desc}</p>
-              
+
               <div className="mt-auto pt-6 border-t border-gold/10">
                 <span className="text-[10px] text-ivory/50 uppercase tracking-widest block mb-2">Ideal For</span>
                 <span className="text-xs text-ivory/80">{pkg.ideal}</span>
@@ -314,7 +314,7 @@ function SignatureJourneys() {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-16 text-center">
           <button className="btn-gold group inline-flex items-center gap-2">
             Request Custom Itinerary <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -354,7 +354,7 @@ export default function Home() {
 
     // Initial Loading
     const timer = setTimeout(() => setLoading(false), 2000);
-    
+
     // Custom Cursor
     const moveCursor = (e: MouseEvent) => setCursorPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", moveCursor);
@@ -375,11 +375,11 @@ export default function Home() {
         >
           {/* Logo outline draw simulation */}
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <motion.path 
+            <motion.path
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              d="M50 10 L90 90 L10 90 Z" 
+              d="M50 10 L90 90 L10 90 Z"
               stroke="#D4AF37" strokeWidth="2"
             />
           </svg>
@@ -390,31 +390,31 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background text-ivory overflow-hidden selection:bg-gold selection:text-background"
-          onMouseOver={(e) => {
-            const target = e.target as HTMLElement;
-            if (target.closest('button, a, input, select, .interactive')) {
-              setIsHovering(true);
-            } else {
-              setIsHovering(false);
-            }
-          }}
+      onMouseOver={(e) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('button, a, input, select, .interactive')) {
+          setIsHovering(true);
+        } else {
+          setIsHovering(false);
+        }
+      }}
     >
-      <div 
+      <div
         className={`custom-cursor ${isHovering ? 'active' : ''} hidden md:block`}
         style={{ left: cursorPos.x, top: cursorPos.y }}
       />
-      
+
       <Navbar />
       <Hero />
       <ValueDifference />
-      
+
       {/* 4. HOW WE WORK */}
       <section className="section-padding bg-surface" id="services">
         <div className="container-max grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-4 block">How We Work</span>
             <h2 className="text-4xl md:text-5xl font-serif mb-12">A journey that feels inevitable, not improvised.</h2>
-            
+
             <div className="space-y-12">
               {[
                 { step: "01", title: "Listen", desc: "We begin by understanding your travel style, preferences, and desires for this specific getaway." },
@@ -493,7 +493,7 @@ export default function Home() {
             <span className="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-4 block">India to Sri Lanka</span>
             <h2 className="text-4xl md:text-5xl font-serif mb-6">Closer than you think.<br />More luxurious than you imagined.</h2>
             <p className="text-muted mb-10 leading-relaxed text-lg">With direct short flights from major Indian cities, Sri Lanka is the ultimate quick-escape destination. We cater specifically to our Indian guests with tailored services.</p>
-            
+
             <ul className="space-y-4 mb-12 flex flex-col items-center">
               {["100% Vegetarian & Jain-friendly dining options", "Curated Ramayana Trail heritage tours", "Hassle-free ETA Visa guidance", "Quotes provided in INR"].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm md:text-base text-ivory/80">
@@ -530,11 +530,11 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 {/* Badges Placeholder */}
-                <div className="w-16 h-16 border border-gold/30 rounded flex items-center justify-center text-[10px] text-gold uppercase text-center bg-surface/50">IATA<br/>Cert</div>
-                <div className="w-16 h-16 border border-gold/30 rounded flex items-center justify-center text-[10px] text-gold uppercase text-center bg-surface/50">SLTDA<br/>Valid</div>
+                <div className="w-16 h-16 border border-gold/30 rounded flex items-center justify-center text-[10px] text-gold uppercase text-center bg-surface/50">IATA<br />Cert</div>
+                <div className="w-16 h-16 border border-gold/30 rounded flex items-center justify-center text-[10px] text-gold uppercase text-center bg-surface/50">SLTDA<br />Valid</div>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-gold text-sm tracking-widest uppercase mb-6">Explore</h4>
               <ul className="space-y-3">
@@ -547,9 +547,9 @@ export default function Home() {
             <div>
               <h4 className="text-gold text-sm tracking-widest uppercase mb-6">Get In Touch</h4>
               <ul className="space-y-4 text-sm text-muted">
-                <li className="flex gap-3"><MapPin className="text-gold shrink-0 w-5 h-5"/> 22/20, Sepali Place, Yahampath Mawatha, Maharagama, Sri Lanka</li>
-                <li className="flex gap-3"><Phone className="text-gold shrink-0 w-5 h-5"/> +94 112 2160252</li>
-                <li className="flex gap-3"><Mail className="text-gold shrink-0 w-5 h-5"/> info@ihvtravel.com</li>
+                <li className="flex gap-3"><MapPin className="text-gold shrink-0 w-5 h-5" /> 22/20, Sepali Place, Yahampath Mawatha, Maharagama, Sri Lanka</li>
+                <li className="flex gap-3"><Phone className="text-gold shrink-0 w-5 h-5" /> +94 112 2160252</li>
+                <li className="flex gap-3"><Mail className="text-gold shrink-0 w-5 h-5" /> info@ihvtravel.com</li>
               </ul>
             </div>
 

@@ -122,7 +122,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact fp footer */}
+          {/* Contact r */}
           <div>
             <h4 className="font-serif text-gold text-base mb-5 tracking-wide">
               Contact Us

@@ -20,56 +20,28 @@ if (typeof window !== "undefined") {
 
 // Removed GoldLotus 3D Component
 
-const HERO_SLIDES = [
-  { id: 1, title: "Sigiriya Rock", subtitle: "Ancient Majesty", image: "https://images.unsplash.com/photo-1588215582352-793db5f86650?auto=format&fit=crop&q=80" },
-  { id: 2, title: "Kandy Perahera", subtitle: "Cultural Splendor", image: "/images/perahera.jpg" }, // user asked for specific path or unsplash
-  { id: 3, title: "Ella Train", subtitle: "Misty Highlands", image: "https://images.unsplash.com/photo-1579738018260-843d1a49f57d?auto=format&fit=crop&q=80" },
-  { id: 4, title: "Hiriketiya Sunset", subtitle: "Coastal Dreams", image: "/images/hirikatiya.jpg" },
-  { id: 5, title: "Galle Fort", subtitle: "Colonial Charm", image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80" },
-];
-
 function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative w-full h-screen overflow-hidden bg-background">
-      {/* Background Slides */}
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1 }}
-          animate={{ opacity: 1, scale: 1.1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${HERO_SLIDES[currentSlide].image})`,
-              // Fallback for paths that might not exist yet
-              backgroundColor: "#141414"
-            }} 
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background/90" />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+      >
+        <source src="/video/background-video.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/90 via-background/40 to-background/95" />
 
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto pt-20">
         <motion.p 
-          key={`subtitle-${currentSlide}`}
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 1 }}
           className="text-gold tracking-[0.4em] uppercase text-xl md:text-3xl font-semibold mb-6"
         >
-          {HERO_SLIDES[currentSlide].subtitle}
+          Timeless Splendor
         </motion.p>
         
         <motion.h1 
@@ -97,23 +69,6 @@ function Hero() {
             Explore Destinations
           </button>
         </motion.div>
-      </div>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
-        <div className="text-gold text-sm font-serif italic">
-          0{currentSlide + 1} <span className="text-muted text-xs mx-1">/</span> 0{HERO_SLIDES.length}
-        </div>
-        <div className="flex gap-2">
-          {HERO_SLIDES.map((_, idx) => (
-            <button 
-              key={idx} 
-              onClick={() => setCurrentSlide(idx)}
-              className={`h-1 transition-all duration-500 rounded-full ${idx === currentSlide ? "w-8 bg-gold" : "w-2 bg-white/20"}`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
       </div>
       
       {/* Scroll indicator */}
@@ -299,7 +254,7 @@ function ValueDifference() {
           <p className="text-muted text-lg">We bridge the gap between pure raw nature and refined premium luxury. Every detail of your journey is crafted with meticulous local expertise and verified to exceed global design standards.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-gold/10 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-gold/10 py-12">
           {[
             { value: "10k+", label: "Travelers Hooked" },
             { value: "500+", label: "Bespoke Tours" },
@@ -309,16 +264,6 @@ function ValueDifference() {
             <div key={i} className="text-center">
               <div className="text-4xl md:text-6xl font-serif text-gold mb-2">{stat.value}</div>
               <div className="text-xs text-muted uppercase tracking-widest">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {features.map((feat, i) => (
-            <div key={i} className="val-card card-luxury p-8 flex flex-col items-center text-center group cursor-pointer">
-              <feat.icon className="w-10 h-10 text-gold mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-              <h3 className="text-xl font-serif text-ivory mb-3">{feat.title}</h3>
-              <div className="w-8 h-px bg-gold/50 group-hover:w-16 transition-all duration-300" />
             </div>
           ))}
         </div>

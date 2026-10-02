@@ -499,14 +499,27 @@ export default function Home() {
               ))}
             </ul>
 
-            <div className="card-luxury p-8 flex items-center justify-center gap-6 max-w-md mx-auto">
-              <div className="w-16 h-16 rounded-full bg-charcoal border border-gold/50 overflow-hidden relative shrink-0">
-                <Image src="/images/shivkumar.jpg" alt="V. Shivakumar" fill className="object-cover object-top" />
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="card-luxury p-8 flex items-center justify-center gap-6">
+                <div className="w-16 h-16 rounded-full bg-charcoal border border-gold/50 overflow-hidden relative shrink-0">
+                  <Image src="/images/shivkumar.jpg" alt="V. Shivakumar" fill className="object-cover object-top" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-serif text-lg text-gold">V. Shivakumar</h4>
+                  <p className="text-xs text-muted uppercase tracking-widest mb-2">IHV Representative, India</p>
+                  <Link href="#" className="text-gold text-xs underline hover:text-ivory transition-colors">Connect on LinkedIn</Link>
+                </div>
               </div>
-              <div className="text-left">
-                <h4 className="font-serif text-lg text-gold">V. Shivakumar</h4>
-                <p className="text-xs text-muted uppercase tracking-widest mb-2">IHV Representative, India</p>
-                <Link href="#" className="text-gold text-xs underline hover:text-ivory transition-colors">Connect on LinkedIn</Link>
+              <div className="card-luxury p-8 flex items-center justify-center gap-6">
+                <div className="w-16 h-16 rounded-full bg-charcoal border border-gold/50 overflow-hidden relative shrink-0">
+                  <Image src="/images/geet1.png" alt="Shabnam Raza (Geeta)" fill className="object-cover object-top" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-gold uppercase tracking-widest mb-1">Deputy Director</p>
+                  <h4 className="font-serif text-lg text-ivory">Shabnam Raza (Geeta)</h4>
+                  <p className="text-xs text-muted mb-2">Business Networking Professional</p>
+                  <Link href="#" className="text-gold text-xs underline hover:text-ivory transition-colors">Connect on LinkedIn</Link>
+                </div>
               </div>
             </div>
           </div>

@@ -8,6 +8,8 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronRight, ArrowRight, MapPin, Calendar, Users, Compass, CheckCircle, ArrowUpRight, Play, X, Menu, Phone, Mail } from "lucide-react";
+import RamayanaMapSection from "../components/sections/RamayanaMapSection";
+import HowWeWorkSection from "../components/sections/HowWeWorkSection";
 
 // GSAP registration
 if (typeof window !== "undefined") {
@@ -98,7 +100,7 @@ function Navbar() {
 
   const mainLinks = [
     "Home",
-    "Lifestyle Experiences",
+    "Ramayana Trail",
     "About",
     "Services",
     "Our Signature Journey",
@@ -405,78 +407,10 @@ export default function Home() {
       <Hero />
       <ValueDifference />
 
-      {/* 4. HOW WE WORK */}
-      <section className="section-padding bg-surface" id="services">
-        <div className="container-max grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-4 block">How We Work</span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-12">A journey that feels inevitable, not improvised.</h2>
 
-            <div className="space-y-12">
-              {[
-                { step: "01", title: "Listen", desc: "We begin by understanding your travel style, preferences, and desires for this specific getaway." },
-                { step: "02", title: "Design", desc: "Our local experts craft a bespoke itinerary, selecting boutique stays and exclusive experiences." },
-                { step: "03", title: "Journey", desc: "You arrive to seamless logistics, 24/7 concierge support, and a journey that unfolds flawlessly." }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-6 items-start">
-                  <div className="text-3xl font-serif text-gold/30 pt-1">{item.step}</div>
-                  <div>
-                    <h3 className="text-xl font-serif text-gold mb-2">{item.title}</h3>
-                    <p className="text-muted leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative h-[600px] w-full rounded-2xl overflow-hidden group">
-            <Image src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80" alt="Sri Lanka Tea Plantation" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-            <div className="absolute bottom-10 left-10 right-10">
-              <div className="backdrop-blur-md bg-surface/80 border border-gold/30 p-6 rounded-xl">
-                <p className="text-lg font-serif italic text-ivory">&quot;Three regions. Two flights. Zero rush.&quot;</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. LIFESTYLE EXPERIENCES */}
-      <section className="section-padding bg-background relative" id="lifestyle-experiences">
-        <div className="container-max">
-          <div className="flex justify-between items-end mb-16">
-            <div>
-              <span className="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-4 block">Curated Moments</span>
-              <h2 className="text-4xl md:text-5xl font-serif">Lifestyle Experiences</h2>
-            </div>
-            <button className="btn-outline-gold hidden md:block">View All Experiences</button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Local Kitchen Dining", tag: "Culinary Series", img: "/images/food" },
-              { title: "Hiriketiya Sunset Surf", tag: "Active Luxury", img: "/images/hirikatiya" },
-              { title: "Dandeniya Sanctuary", tag: "Lake Retreat", img: "/images/lake" },
-              { title: "Zen Garden Pavilion", tag: "Wellness & Spa", img: "/images/yoga" }
-            ].map((exp, i) => (
-              <div key={i} className="group relative h-[450px] rounded-xl overflow-hidden cursor-pointer">
-                {/* 3D hover tilt simulation using framer motion would go here, simplified to CSS for brevity */}
-                <div className="absolute inset-0 bg-surface transition-transform duration-700 group-hover:scale-110">
-                  <div className="w-full h-full bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?auto=format&fit=crop&q=80)` }} />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/50 rounded-xl transition-all duration-500 shadow-[inset_0_0_0_rgba(212,175,55,0)] group-hover:shadow-[inset_0_0_30px_rgba(212,175,55,0.3)]" />
-                <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-gold text-[10px] tracking-widest uppercase mb-2 block">{exp.tag}</span>
-                  <h3 className="text-xl font-serif text-ivory group-hover:text-gold transition-colors">{exp.title}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center md:hidden">
-            <button className="btn-outline-gold w-full">View All</button>
-          </div>
-        </div>
-      </section>
+      <RamayanaMapSection />
+      
+      <HowWeWorkSection />
 
       <SignatureJourneys />
 

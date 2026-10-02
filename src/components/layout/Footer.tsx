@@ -13,12 +13,12 @@ const packages = [
   { label: "Romance & Honeymoon", href: "#packages" },
 ];
 
-const quickLinks = [
-  { label: "Our Packages", href: "#packages" },
-  { label: "Why Choose IHV", href: "#why-ihv" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Enquire Now", href: "#contact" },
-  { label: "Main Website", href: "https://ihvtravel.com", external: true },
+const exploreLinks = [
+  { label: "Home", href: "https://ihvtravel.com", external: true },
+  { label: "Destinations", href: "https://ihvtravel.com/destinations", external: true },
+  { label: "Experiences", href: "https://ihvtravel.com/experiences", external: true },
+  { label: "Offers", href: "https://ihvtravel.com/offers", external: true },
+  { label: "Gallery", href: "https://ihvtravel.com/gallery", external: true },
 ];
 
 export default function Footer() {
@@ -90,13 +90,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore Links */}
           <div>
-            <h4 className="font-serif text-gold text-base mb-5 tracking-wide">
-              Quick Links
+            <h4 className="font-serif text-gold text-base mb-5 tracking-wide uppercase">
+              Explore
             </h4>
             <ul className="space-y-2.5">
-              {quickLinks.map((l) => (
+              {exploreLinks.map((l) => (
                 <li key={l.label}>
                   {l.external ? (
                     <a

@@ -315,9 +315,9 @@ function SignatureJourneys() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="btn-gold group inline-flex items-center gap-2">
-            Request Custom Itinerary <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          <a href="https://ihvtravel.com" target="_blank" rel="noopener noreferrer" className="btn-gold group inline-flex items-center gap-2">
+            Request Itinerary <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </section>
@@ -409,7 +409,7 @@ export default function Home() {
 
 
       <RamayanaMapSection />
-      
+
       <HowWeWorkSection />
 
       <SignatureJourneys />

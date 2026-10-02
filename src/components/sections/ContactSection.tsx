@@ -47,9 +47,9 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+94 XX XXX XXXX",
+    value: "+91 90829 49881",
     sub: "Mon–Sat, 9am–6pm IST",
-    link: "tel:+94XXXXXXXXX",
+    link: "tel:+919082949881",
   },
   {
     icon: Mail,

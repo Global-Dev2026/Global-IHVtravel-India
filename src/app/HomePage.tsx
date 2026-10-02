@@ -116,7 +116,7 @@ function Navbar() {
             </Link>
             <div className="w-px h-3 bg-gold/30" />
             <Link href="#contact-us" className="hover:text-gold transition-colors flex items-center gap-2">
-              <Phone size={10} /> +94 112 2160252
+              <Phone size={10} /> +91 90829 49881
             </Link>
             <div className="w-px h-3 bg-gold/30" />
             <Link href="#contact-us" className="hover:text-gold transition-colors">Contact Us</Link>
@@ -558,8 +558,8 @@ export default function Home() {
               <h4 className="text-gold text-sm tracking-widest uppercase mb-6">Get In Touch</h4>
               <ul className="space-y-4 text-sm text-muted">
                 <li className="flex gap-3"><MapPin className="text-gold shrink-0 w-5 h-5" /> 22/20, Sepali Place, Yahampath Mawatha, Maharagama, Sri Lanka</li>
-                <li className="flex gap-3"><Phone className="text-gold shrink-0 w-5 h-5" /> +94 112 2160252</li>
-                <li className="flex gap-3"><Mail className="text-gold shrink-0 w-5 h-5" /> info@ihvtravel.com</li>
+                <li className="flex gap-3"><Phone className="text-gold shrink-0 w-5 h-5" /> +91 90829 49881</li>
+                <li className="flex gap-3"><Mail className="text-gold shrink-0 w-5 h-5" /> <a href="mailto:info@ihvtravel.com" className="hover:text-gold transition-colors">info@ihvtravel.com</a></li>
               </ul>
             </div>
 

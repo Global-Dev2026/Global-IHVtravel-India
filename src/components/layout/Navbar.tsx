@@ -87,7 +87,7 @@ export default function Navbar() {
                 className="hidden md:flex items-center gap-2 text-gold text-sm font-medium hover:text-gold-light transition-colors"
               >
                 <Phone size={14} />
-                <span>+94 XX XXX XXXX</span>
+                <span>+91 90829 49881</span>
               </a>
               <button
                 onClick={() => handleNavClick("#contact")}
@@ -144,7 +144,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 text-gold text-base font-medium justify-center mt-2"
               >
                 <Phone size={16} />
-                <span>+94 XX XXX XXXX</span>
+                <span>+91 90829 49881</span>
               </a>
             </nav>
           </motion.div>

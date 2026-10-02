@@ -62,12 +62,9 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 1 }}
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"
         >
-          <button className="btn-gold group flex items-center gap-2">
+          <a href="https://ihvtravel.com" target="_blank" rel="noopener noreferrer" className="btn-gold group flex items-center gap-2">
             Start Your Journey <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="btn-outline-gold">
-            Explore Destinations
-          </button>
+          </a>
         </motion.div>
       </div>
 

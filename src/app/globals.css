@@ -136,3 +136,42 @@
   backdrop-filter: blur(2px);
 }
 
+/* Google Translate Customization */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+.goog-te-combo {
+  background-color: transparent !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  font-family: inherit !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+}
+.goog-te-combo:hover {
+  border-color: #D4AF37 !important;
+}
+.goog-te-combo:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+}
+.goog-te-combo option {
+  background-color: #0F0F10 !important;
+  color: #fff !important;
+}

@@ -1,6 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
+declare global {
+  interface Window {
+    googleTranslateElementInit: () => void;
+    google: any;
+  }
+}
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,6 +30,29 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
+    
+    // Load Google Translate Script
+    if (!document.getElementById("google-translate-script")) {
+      window.googleTranslateElementInit = () => {
+        if (window.google && window.google.translate) {
+          new window.google.translate.TranslateElement(
+            { 
+              pageLanguage: "en", 
+              includedLanguages: "en,hi", 
+              layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE 
+            },
+            "google_translate_element"
+          );
+        }
+      };
+      
+      const script = document.createElement("script");
+      script.id = "google-translate-script";
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -89,6 +120,9 @@ export default function Navbar() {
                 <Phone size={14} />
                 <span>+91 90829 49881</span>
               </a>
+              
+              <div id="google_translate_element" className="hidden lg:block ml-2"></div>
+
               <button
                 onClick={() => handleNavClick("#contact")}
                 className="hidden lg:block btn-gold text-xs py-2 px-6"

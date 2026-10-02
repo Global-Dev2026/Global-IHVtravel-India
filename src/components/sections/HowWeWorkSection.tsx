@@ -124,7 +124,7 @@ export default function HowWeWorkSection() {
             <div className="absolute bottom-8 left-8 right-8 z-10 pointer-events-none">
               <div className="backdrop-blur-md bg-black/40 border border-white/10 p-6 rounded-2xl shadow-xl">
                 <p className="font-serif italic text-white/90 text-lg md:text-xl text-center">
-                  "Three regions. Two flights. Zero rush."
+                  &quot;Three regions. Two flights. Zero rush.&quot;
                 </p>
               </div>
             </div>

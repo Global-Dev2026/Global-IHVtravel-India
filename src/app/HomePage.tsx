@@ -520,7 +520,7 @@ export default function Home() {
       </footer>
 
       {/* Floating WhatsApp */}
-      <a href="https://wa.me/94771522718" target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform">
+      <a href="https://wa.me/919082949881" target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform">
         <Phone size={24} />
       </a>
     </main>

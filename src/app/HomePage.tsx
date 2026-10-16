@@ -449,7 +449,7 @@ export default function Home() {
                   <Image src="/images/geet1.png" alt="Shabnam Raza (Geeta)" fill className="object-cover object-center" />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs text-gold uppercase tracking-widest mb-1">Deputy Director</p>
+                  <p className="text-xs text-gold uppercase tracking-widest mb-1">Director</p>
                   <h4 className="font-serif text-lg text-ivory">Shabnam Raza (Geeta)</h4>
                   <p className="text-xs text-muted mb-2">Business Networking Professional</p>
                   <Link href="#" className="text-gold text-xs underline hover:text-ivory transition-colors">Connect on LinkedIn</Link>

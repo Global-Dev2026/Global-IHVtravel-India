@@ -433,8 +433,8 @@ export default function Home() {
               ))}
             </ul>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="card-luxury p-8 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-6 text-center sm:text-left">
+            <div className="max-w-xl mx-auto">
+              {/* <div className="card-luxury p-8 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-6 text-center sm:text-left">
                 <div className="w-24 h-24 rounded-full bg-white border border-gold/50 overflow-hidden relative shrink-0">
                   <Image src="/images/shivkumar.jpg" alt="V. Shivakumar" fill className="object-cover object-top" />
                 </div>
@@ -443,7 +443,7 @@ export default function Home() {
                   <p className="text-xs text-muted uppercase tracking-widest mb-2">IHV Representative, India</p>
                   <Link href="#" className="text-gold text-xs underline hover:text-ivory transition-colors">Connect on LinkedIn</Link>
                 </div>
-              </div>
+              </div> */}
               <div className="card-luxury p-8 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-6 text-center sm:text-left">
                 <div className="w-24 h-24 rounded-full bg-white border border-gold/50 overflow-hidden relative shrink-0">
                   <Image src="/images/geet1.png" alt="Shabnam Raza (Geeta)" fill className="object-cover object-center" />
